@@ -8,11 +8,11 @@ Write a program to solve arbitrary Sudoku puzzles.
 Empty cells are indicated by the character '.'.
 
 */
-
+// outermost func calls solver, which returns a boolean
 var sudokuSolver = (board) => {
   return solver(board)
 }
-
+// solver loops over all rows and columns of the board
 const solver = (board) => {
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
@@ -38,7 +38,7 @@ const solver = (board) => {
   }
   return true;
 };
-
+// function that returns a boolean based on whether or not the generated sudoku board is valid.
 const isValid = (row, col, board, char) => {
   for (let k = 0; k < 9; k++) {
     if (board[row][k] == char) {
@@ -93,16 +93,19 @@ let sudokuGridHard = [
 [".","8","7",".",".",".",".",".","."]
 ]
 
-// let sudokuGridImpossible = [
-//   ["1","2","3","4","5","6","7","8","."],
-//   [".",".",".",".",".",".","9",".","2"],
-//   ["9","7",".","3",".",".",".",".","3"],
-//   [".","1",".",".","6",".","5",".","4"],
-//   [".",".","4","7",".","8",".",".","5"],
-//   [".",".",".",".",".","2",".",".","6"],
-//   [".","3","1",".",".","4",".",".","7"],
-//   [".",".",".","8",".",".","1","6","8"],
-//   [".","8","7",".",".",".",".",".","9"]
-//   ]
+let sudokuGridImpossible = [
+  ["1","2","3","4","5","6","7","8","."],
+  [".",".",".",".",".",".","9",".","2"],
+  ["9","7",".","3",".",".",".",".","3"],
+  [".","1",".",".","6",".","5",".","4"],
+  [".",".","4","7",".","8",".",".","5"],
+  [".",".",".",".",".","2",".",".","6"],
+  [".","3","1",".",".","4",".",".","7"],
+  [".",".",".","8",".",".","1","6","8"],
+  [".","8","7",".",".",".",".",".","9"]
+  ]
 
 console.log(sudokuSolver(sudokuGridEasy))
+console.log(sudokuSolver(sudokuGridMedium))
+console.log(sudokuSolver(sudokuGridHard))
+console.log(sudokuSolver(sudokuGridImpossible))

@@ -2,8 +2,20 @@
 Merge k sorted linked lists and return it as one sorted linked list.
 
 Note: please make sure to use linked lists as opposed to arrays or other data-structures for this problem.
-
 */
+
+/*
+ *TIME COMPLEXITY: The time complexity of this problem is linear. The three linear operations in this solution are
+
+  - the forEach loop on line 77
+  - the array sort on line 89
+  - and the forEach loop on line 90
+
+  The rest of the operations offer constant time (shift, push, pop etc.)
+ */
+
+
+
 // defining the shape of each node in a singly linked list
 class Node {
   constructor(val) {
